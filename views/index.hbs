@@ -1,0 +1,29 @@
+ <div class="info">
+
+ </div>
+  <form id="form">
+            <input id="freq" type="text" name="freq" value="" placeholder="Enter wanted frequency"/>
+            <input id="amp" type="text" name="amp" value="" placeholder="Enter wanted amplitude"/>
+            <select id="wave">
+                <option value="0">square wave</option>
+            
+                <option value="1">staircase wave</option>
+                    <option value="2">traingle wave</option>
+                <option value="3">sine wave</option>
+            </select>
+            <input type="submit" value="send data to avr"/>
+</form>
+<script >
+
+    $("#form").on("submit",(e)=>{
+        e.preventDefault()
+        var data={
+            freq:$("#freq").val(),
+            amp:$("#amp").val(),
+            wave:$("#wave").val()
+        }
+        console.log(data)
+        socket.emit("submit_wave_generation",{data})
+    })
+
+</script>
