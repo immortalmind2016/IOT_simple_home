@@ -6,3 +6,5 @@ Home connected to facebook chatbot
 NOTE : configure your tokens first
 ## requirments :
 Arduino, rpi or atmega
+## using 
+Nodejs,web socket
